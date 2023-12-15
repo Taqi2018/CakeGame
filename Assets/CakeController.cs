@@ -17,8 +17,8 @@ public class CakeController : MonoBehaviour
     {
         if (isCollide)
         {
-            transform.position+= new Vector3(0, 0,  -gameObjectToLead.GetComponent<PlayerController>().ballSpeed *Time.deltaTime);
-            transform.position = new Vector3(gameObjectToLead.GetComponent<PlayerController>().targetX, transform.position.y,transform.position.z);
+            transform.position+= new Vector3(0, 0,  -gameObjectToLead.GetComponent<PlayerController>().ballSpeed*Time.deltaTime);
+            transform.position = new Vector3(gameObjectToLead.GetComponent<PlayerController>().newX, transform.position.y,transform.position.z);
         }
 
         
