@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class CakeController : MonoBehaviour
 {
-     bool isCollide, isFluidCollide;
+     bool isCollide, isFluidCollide, isCooked, isSmashed, isColored;
      Transform gameObjectToLead;
 
+     [SerializeField] Transform CakeHolder;
      [SerializeField] Transform Dough;
+     [SerializeField] Transform CookedCake;
+     [SerializeField] Transform HeartCake;
+     [SerializeField] Transform cake;
+
+     [SerializeField] Material HeartCakeMaterial;
      // Start is called before the first frame update
      void Start()
      {
           isCollide = false;
           isFluidCollide = false;
+          isCooked = false;
+          isSmashed = false;
+          isColored = false;
           Dough.gameObject.SetActive(false);
+          CookedCake.gameObject.SetActive(false);
+          HeartCake.gameObject.SetActive(false);
 
      }
 
@@ -45,6 +56,34 @@ public class CakeController : MonoBehaviour
                isFluidCollide = true;
 
                Dough.gameObject.SetActive(true);
+          }
+
+          if ((collision.transform.tag == "Cook") & !isCooked)
+          {
+               isCooked = true;
+
+               CakeHolder.gameObject.SetActive(false);
+               Dough.gameObject.SetActive(false);
+               CookedCake.gameObject.SetActive(true);
+          }
+
+          if ((collision.transform.tag == "Smash") & !isSmashed)
+          {
+               isSmashed = true;
+
+
+               CookedCake.gameObject.SetActive(false);
+               HeartCake.gameObject.SetActive(true);
+          }
+
+          if ((collision.transform.tag == "PinkFluid") & !isColored)
+          {
+               
+               isColored = true;
+
+               cake.gameObject.GetComponent<MeshRenderer>().material.color = HeartCakeMaterial.color;
+
+               
           }
      }
 }
