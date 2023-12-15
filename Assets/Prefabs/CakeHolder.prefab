@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1491490900418558973}
   - component: {fileID: 711017493610905586}
   - component: {fileID: 7274125020488277094}
+  - component: {fileID: 6974962900960260550}
   m_Layer: 0
   m_Name: CakeHolder
   m_TagString: Cake
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9540c1704ee92f40a022483492b1e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dough: {fileID: 4545977598805135216}
 --- !u!65 &7274125020488277094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138,11 +140,27 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5648197042067190442}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.696482, y: 0.2453737, z: 0.7181403}
   m_Center: {x: 0.010615557, y: 0.11749251, z: 0.0004993379}
+--- !u!54 &6974962900960260550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5648197042067190442}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &9096764720104222790
 GameObject:
   m_ObjectHideFlags: 0

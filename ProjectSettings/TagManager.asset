@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cake
+  - Fluid
   layers:
   - Default
   - TransparentFX
